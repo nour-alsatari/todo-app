@@ -1,3 +1,14 @@
+import {
+  Card,
+  Button,
+  FormGroup,
+  InputGroup,
+  Switch,
+  Elevation,
+  ButtonGroup,
+  AnchorButton,
+} from '@blueprintjs/core';
+
 import React, { useEffect, useState, useContext } from "react";
 import useForm from "../hooks/form.js";
 import {SettingsContext} from "../context/settings";
@@ -29,47 +40,64 @@ const Form = () => {
     
       return (
         <>
-          <form onSubmit={handleSubmit}>
+        <FormGroup id='form'>
+        <form onSubmit={handleSubmit}>
+          <Card
+            id='form-card'
+            elevation={Elevation.TWO}
+          >
             <h2>Add To Do Item</h2>
-    
             <label>
               <span>To Do Item</span>
-              <input
+              <InputGroup
                 onChange={handleChange}
-                name="text"
-                type="text"
-                placeholder="Item Details"
+                name='text'
+                type='text'
+                placeholder='Item Details'
               />
             </label>
-    
+
             <label>
               <span>Assigned To</span>
-              <input
+              <InputGroup
                 onChange={handleChange}
-                name="assignee"
-                type="text"
-                placeholder="Assignee Name"
+                name='assignee'
+                type='text'
+                placeholder='Assignee Name'
               />
             </label>
-    
-            <label>
-              <span>Difficulty</span>
-              <input
-                onChange={handleChange}
-                defaultValue={3}
-                type="range"
-                min={1}
-                max={5}
-                name="difficulty"
-              />
-            </label>
-    
-            <label>
-              <button type="submit">Add Item</button>
-            </label>
-          </form>
-    
-         
+            <div className='settings'>
+              <div>
+                <label>
+                  <span>Difficulty</span>
+                  <input
+                    onChange={handleChange}
+                    defaultValue={3}
+                    type='range'
+                    min={1}
+                    max={5}
+                    name='difficulty'
+                  />
+                </label>
+                <label>
+                  <Button fill='true' type='submit'>add item</Button>
+                </label>
+              </div>
+              <div className='displaySettings'>
+                <label>
+                  <Switch className='displaySettings'
+                    checked={state.isHidden}
+                    label='show complete'
+                    onChange={()=> state.setisHidden(!state.isHidden)}
+                  />
+                </label>
+             
+              </div>
+            </div>
+          </Card>
+        </form>
+      </FormGroup>
+      <div></div>
         </>
       );
     };

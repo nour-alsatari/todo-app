@@ -13,7 +13,7 @@ export default function SettingsProvider(props) {
 
   //Manually set (hard code) those state settings in the context provider’s state, they should not be changeable.??
 
-  const state = { isHidden, numerOfItemsDisplayed, sortField, incomplete, setIncomplete, list, setList};
+  const state = { setisHidden,isHidden, numerOfItemsDisplayed, sortField,setsortField, incomplete, setIncomplete, list, setList};
   return (
     <>
       <SettingsContext.Provider value={state}>
