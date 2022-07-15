@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import {SettingsContext} from "../context/settings";
-
+import Form from "./form";
+import List from "./list";
 
 const ToDo = () => {
   const state = useContext(SettingsContext);
@@ -24,7 +25,7 @@ const ToDo = () => {
 
       { !state.isHidden &&
       state.list.map((item) => (
-        <div key={item.id}>
+        <div id = "todo-card"key={item.id}>
           <p>{item.text}</p>
           <p>
             <small>Assigned to: {item.assignee}</small>
