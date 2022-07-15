@@ -6,6 +6,6 @@ UML:
 ![uml](./uml.png)
 
 deployed: 
-https://62d1b708678e37672aca7c21--calm-zabaione-0cff3c.netlify.app/
+https://62d1b708678e37672aca7c21--calm-zabaione-0cff3c.netlify.app/ <br />
 PR: https://github.com/nour-alsatari/todo-app/pull/1
 
