@@ -88,7 +88,10 @@ const Form = () => {
                   <Switch className='displaySettings'
                     checked={state.isHidden}
                     label='show complete'
-                    onChange={()=> state.setisHidden(!state.isHidden)}
+                    onChange={()=> {state.setisHidden(!state.isHidden)
+                      localStorage.setItem("hide", JSON.stringify(state.isHidden));
+
+                    }}
                   />
                 </label>
              
