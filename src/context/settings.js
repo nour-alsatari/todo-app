@@ -10,7 +10,7 @@ export default function SettingsProvider(props) {
   const [incomplete, setIncomplete] = useState([]);
   const [list, setList] = useState([]);
   useEffect(()=>{
-    setisHidden(JSON.parse(localStorage.getItem("hide")));
+    setisHidden(false ||JSON.parse(localStorage.getItem("hide")));
     setnumerOfItemsDisplayed(JSON.parse(localStorage.getItem("numerOfItemsDisplayed")));
 
 
