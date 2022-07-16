@@ -6,8 +6,9 @@ UML:
 
 
 <br/>
-UML phase 3:
-![uml-phase3](./uml3.png)
+UML phase 3: 
+
+![phase3](./uml3.png)
 
 <br />
 deployed: 
