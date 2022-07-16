@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const SettingsContext = React.createContext();
 
@@ -9,7 +9,12 @@ export default function SettingsProvider(props) {
   const [sortField, setsortField] = useState("descending"); // Default sort field (string).
   const [incomplete, setIncomplete] = useState([]);
   const [list, setList] = useState([]);
+  useEffect(()=>{
+    setisHidden(JSON.parse(localStorage.getItem("hide")));
+    setnumerOfItemsDisplayed(JSON.parse(localStorage.getItem("numerOfItemsDisplayed")));
 
+
+  }, [])
 
   //Manually set (hard code) those state settings in the context provider’s state, they should not be changeable.??
 
